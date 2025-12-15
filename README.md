@@ -498,7 +498,7 @@ Distributed under the MIT License. See `LICENSE` file for details.
 
 ### 📞 Contact
 - GitHub Issues: [Report Bug / Request Feature](https://github.com/luminaria/snappie/issues)
-- Email: hello@luminariadev.xyz
+- Email: rizkianuari83@gmail.com
 
 ---
 
