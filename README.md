@@ -96,8 +96,8 @@ snappie-photobooth/
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/username/snappie-photobooth.git
-cd snappie-photobooth
+git clone https://github.com/luminariadev/snappie.git
+cd snappie
 ```
 
 ### 2. Setup Backend
@@ -220,24 +220,10 @@ Distributed under the MIT License. See `LICENSE` for more information.
 💻 *Shining with Code ✨*
 
 - GitHub: [@luminariadev](https://github.com/luminariadev)
-- Portfolio: [luminariadev.xyz](https://luminariadev.xyz)
-- Email: hello@luminariadev.xyz
+- Email: rizkianuari83@gmail.com
 
 ---
 
 ## ⭐ Support
 
 Jika project ini membantu Anda, berikan ⭐ pada repository ini!
-
----
-
-## 🔗 Links Berguna
-
-- [📚 Documentation](./docs/)
-- [🐛 Report Bug](https://github.com/username/snappie-photobooth/issues)
-- [💡 Request Feature](https://github.com/username/snappie-photobooth/issues)
-- [📦 Download Latest Release](https://github.com/username/snappie-photobooth/releases)
-
----
-
-*Dibuat dengan ❤️ untuk komunitas developer Indonesia*
