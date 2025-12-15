@@ -1,50 +1,54 @@
-# 📸 SNAPPIE – Photobooth Web Application
+# 📸 SNAPPIE – Modern Photobooth Web Application
 
 ![React](https://img.shields.io/badge/React-18.2.0-61DAFB?style=for-the-badge&logo=react)
 ![Node.js](https://img.shields.io/badge/Node.js-20.x-339933?style=for-the-badge&logo=nodedotjs)
-![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql)
-![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-3.3.0-06B6D4?style=for-the-badge&logo=tailwindcss)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-4169E1?style=for-the-badge&logo=postgresql)
+![Docker](https://img.shields.io/badge/Docker-✓-2496ED?style=for-the-badge&logo=docker)
+![Express.js](https://img.shields.io/badge/Express.js-4.18.2-000000?style=for-the-badge&logo=express)
 
-SNAPPIE adalah aplikasi **photobooth berbasis web** yang memungkinkan pengguna mengambil foto dengan frame digital, memilih antara frame gratis dan premium, melakukan pembayaran, serta langsung mendownload hasil foto dengan kualitas tinggi. Dilengkapi dengan panel admin untuk manajemen konten dan transaksi.
+SNAPPIE adalah aplikasi photobooth berbasis web modern yang memungkinkan pengguna mengambil foto dengan frame digital, memilih antara frame gratis dan premium, melakukan pembayaran yang aman, serta langsung mendownload hasil foto. Dibangun dengan arsitektur containerized menggunakan Docker untuk kemudahan deployment dan konsistensi lingkungan.
 
 ---
 
-## ✨ Fitur Utama
+## 🎯 Fitur Utama
 
 ### 👤 Untuk Pengguna
 - 🎯 **Ambil foto** dengan pilihan strip (1, 3, atau 4 foto)
-- 🖼️ **Pilih frame** sesuai jumlah strip foto
-- 👁️ **Preview real-time** dengan frame yang dipilih
-- 💾 **Download otomatis** setelah sesi foto
-- 🛡️ **Watermark otomatis** untuk frame premium
-- 💳 **Integrasi pembayaran** dengan Midtrans
-- 📱 **Responsive design** untuk semua perangkat
+- 🖼️ **Pilih frame** dari koleksi yang tersedia
+- 👁️ **Preview real-time** dengan teknologi Canvas API
+- 💳 **Sistem pembayaran** terintegrasi Midtrans
+- 💾 **Download otomatis** hasil foto
+- 🏷️ **Watermark otomatis** untuk frame premium
 
 ### 🛠️ Untuk Admin
 - 📊 **Dashboard admin** untuk manajemen konten
-- 🖼️ **Kelola frame** (tambah, edit, hapus)
-- 📁 **Upload thumbnail & frame** dengan sistem kategori otomatis
-- 💰 **Kelola transaksi** dan status pembayaran
-- 🔒 **Proteksi frame** yang sudah digunakan dalam transaksi
-- 📈 **Statistik penggunaan**
+- 🖼️ **Kelola frame** dengan sistem upload yang mudah
+- 💰 **Monitor transaksi** dan status pembayaran
+- 🔒 **Manajemen akses** dan keamanan
 
 ---
 
-## 🧱 Tech Stack
+## 🏗️ Arsitektur Teknologi
 
-| Layer | Teknologi | Keterangan |
-|-------|-----------|------------|
-| **Frontend** | React.js (Vite) | UI Framework |
-| | Tailwind CSS | Styling |
-| | React Router | Navigation |
-| | Canvas API | Photo Processing |
-| **Backend** | Node.js + Express | Server Runtime |
-| | Sequelize ORM | Database Management |
-| | MySQL | Database |
-| | Multer | File Upload |
-| | Midtrans SDK | Payment Gateway |
-| **Tools** | Git + GitHub | Version Control |
-| | Postman | API Testing |
+### Frontend Layer
+- **React.js (Vite)** - UI Framework dengan build tool modern
+- **Tailwind CSS** - Utility-first CSS framework
+- **React Router** - Client-side routing
+- **Canvas API** - Image processing di browser
+- **Axios** - HTTP client untuk API communication
+
+### Backend Layer
+- **Node.js + Express.js** - REST API server
+- **Sequelize ORM** - Database abstraction layer
+- **PostgreSQL** - Relational database
+- **Multer** - File upload middleware
+- **JWT** - Authentication & authorization
+- **Midtrans SDK** - Payment gateway integration
+
+### Infrastructure
+- **Docker** - Containerization platform
+- **Docker Compose** - Multi-container orchestration
+- **PostgreSQL** - Production-ready database
 
 ---
 
@@ -53,177 +57,466 @@ SNAPPIE adalah aplikasi **photobooth berbasis web** yang memungkinkan pengguna m
 ```
 snappie-photobooth/
 ├── frontend/                 # React Application
-│   ├── public/              # Static assets
+│   ├── public/
 │   ├── src/
-│   │   ├── components/      # Reusable components
-│   │   ├── pages/          # Page components
-│   │   ├── hooks/          # Custom hooks
+│   │   ├── components/      # Reusable UI components
+│   │   ├── pages/          # Application pages
 │   │   ├── utils/          # Utility functions
-│   │   ├── styles/         # CSS/Tailwind
-│   │   └── App.jsx         # Main App component
+│   │   ├── layouts/       # Layouts
+│   │   └── data/         # Data List Configuration
+│   ├── index.html
 │   ├── package.json
 │   └── vite.config.js
 │
-├── backend/                  # Node.js Server
-│   ├── controllers/         # Route controllers
-│   ├── models/             # Sequelize models
-│   ├── routes/             # API routes
-│   ├── middleware/         # Custom middleware
+├── backend/                  # Node.js API Server
+│   ├── src/
+│   │   ├── config/         # Configuration files
+│   │   ├── controllers/    # Route controllers
+│   │   ├── models/         # Sequelize models
+│   │   ├── routes/         # API routes
+│   │   ├── middleware/     # Custom middleware
 │   ├── uploads/            # Uploaded files (gitignored)
-│   ├── config/             # Configuration files
-│   ├── server.js           # Entry point
-│   └── package.json
+│   ├── Dockerfile          # Backend Docker configuration
+│   ├── docker-compose.yml  # Multi-container setup
+│   ├── .env.example        # Environment template
+│   ├── package.json
+│   └── server.js           # Application entry point
 │
-├── .gitignore              # Git ignore rules
-├── README.md              # This file
-└── LICENSE                # License file
+├── .dockerignore           # Docker ignore rules
+├── .gitignore             # Git ignore rules
+├── README.md              # This documentation
+└── LICENSE                # MIT License
 ```
 
-> **Note:** Folder berikut **tidak di-push ke GitHub**:
+> **Note:** File/Folder yang tidak di-push ke GitHub:
+> - `node_modules/`
 > - `uploads/`
 > - `frame snappie/`
-> - `node_modules/`
-> - `.env`
+> - `*.env`
+> - `*.log`
+> - `dist/` dan `build/`
 
 ---
 
-## 🚀 Quick Start Guide
+## 🚀 Quick Start dengan Docker
 
 ### Prerequisites
-- Node.js (v18 atau lebih baru)
-- MySQL (v8.0 atau lebih baru)
+- [Docker](https://docs.docker.com/get-docker/) (v20.10+)
+- [Docker Compose](https://docs.docker.com/compose/install/) (v2.0+)
 - Git
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/luminariadev/snappie.git
-cd snappie
+git clone https://github.com/username/snappie.git
+cd snappie-photobooth
 ```
 
-### 2. Setup Backend
+### 2. Setup Environment
 ```bash
-cd backend
-npm install
+# Salin file environment template
+cp backend/.env.example backend/.env
 
-# Buat file .env
-cp .env.example .env
-
-# Edit .env dengan konfigurasi database
-nano .env
-
-# Jalankan server development
-npm run dev
+# Edit konfigurasi sesuai kebutuhan
+nano backend/.env
 ```
 
-### 3. Setup Frontend
+### 3. Jalankan dengan Docker Compose
 ```bash
-cd ../frontend
-npm install
-npm run dev
+# Build dan jalankan semua service
+docker-compose -f backend/docker-compose.yml up --build
+
+# Untuk menjalankan di background (detached mode)
+docker-compose -f backend/docker-compose.yml up -d
 ```
 
-### 4. Database Setup
-```sql
--- Buat database
-CREATE DATABASE snappie;
+### 4. Akses Aplikasi
+- **Backend API**: http://localhost:5000
+- **Frontend Dev**: http://localhost:5173 (jika dijalankan terpisah)
+- **Database**: PostgreSQL pada port 5432
 
--- Jalankan migrasi
--- (Otomatis dengan Sequelize sync)
+### 5. Perintah Docker Lainnya
+```bash
+# Lihat log service
+docker-compose -f backend/docker-compose.yml logs -f
+
+# Hentikan semua service
+docker-compose -f backend/docker-compose.yml down
+
+# Hentikan dan hapus volume
+docker-compose -f backend/docker-compose.yml down -v
+
+# Restart service tertentu
+docker-compose -f backend/docker-compose.yml restart backend
 ```
 
 ---
 
-## ⚙️ Environment Variables
+## ⚙️ Environment Configuration
 
-### Backend (.env)
+### File: `backend/.env`
 ```env
-# Database
-DB_HOST=localhost
-DB_USER=root
-DB_PASS=your_password
-DB_NAME=snappie
-
-# Server
-PORT=5000
+# ========================
+# APPLICATION CONFIGURATION
+# ========================
 NODE_ENV=development
+PORT=5000
+APP_URL=http://localhost:5000
+FRONTEND_URL=http://localhost:5173
 
-# Midtrans Payment
-MIDTRANS_SERVER_KEY=your_server_key_here
-MIDTRANS_CLIENT_KEY=your_client_key_here
+# ========================
+# DATABASE CONFIGURATION (PostgreSQL)
+# ========================
+DB_HOST=postgres
+DB_PORT=5432
+DB_NAME=snappie_db
+DB_USER=snappie_user
+DB_PASSWORD=your_secure_password_here
+DB_DIALECT=postgres
 
-# File Upload
-MAX_FILE_SIZE=5242880
-ALLOWED_FILE_TYPES=image/jpeg,image/png,image/gif
+# ========================
+# PAYMENT GATEWAY (Midtrans)
+# ========================
+MIDTRANS_SERVER_KEY=your_midtrans_server_key
+MIDTRANS_CLIENT_KEY=your_midtrans_client_key
+MIDTRANS_IS_PRODUCTION=false
+
+# ========================
+# FILE UPLOAD CONFIGURATION
+# ========================
+MAX_FILE_SIZE=5242880  # 5MB
+ALLOWED_IMAGE_TYPES=image/jpeg,image/png,image/webp
+UPLOAD_DIR=./uploads
+
+# ========================
+# SECURITY CONFIGURATION
+# ========================
+JWT_SECRET=your_jwt_secret_key_here
+SESSION_SECRET=your_session_secret_here
+CORS_ORIGIN=http://localhost:5173
 ```
 
-### Frontend (.env.local)
-```env
-VITE_API_URL=http://localhost:5000/api
-VITE_MIDTRANS_CLIENT_KEY=your_client_key_here
+---
+
+## 🐳 Docker Services Architecture
+
+### `backend/docker-compose.yml`
+```yaml
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: snappie_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-db:/docker-entrypoint-initdb.d
+    networks:
+      - snappie_network
+
+  # Node.js Backend API
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: snappie_backend
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    ports:
+      - "5000:5000"
+    environment:
+      NODE_ENV: ${NODE_ENV:-development}
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - ./uploads:/app/uploads
+      - ./logs:/app/logs
+    networks:
+      - snappie_network
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:5000/health', (r) => {if(r.statusCode!==200)throw new Error()})"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  snappie_network:
+    driver: bridge
+```
+
+### `backend/Dockerfile`
+```dockerfile
+# Development stage
+FROM node:20-alpine AS development
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm ci
+
+# Copy source code
+COPY . .
+
+# Expose port
+EXPOSE 5000
+
+# Development command
+CMD ["npm", "run", "dev"]
+
+# Production stage
+FROM node:20-alpine AS production
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install production dependencies only
+RUN npm ci --only=production
+
+# Copy built application from development stage
+COPY --from=development /app .
+
+# Create non-root user
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S nodejs -u 1001 && \
+    chown -R nodejs:nodejs /app
+
+USER nodejs
+
+# Expose port
+EXPOSE 5000
+
+# Production command
+CMD ["npm", "start"]
 ```
 
 ---
 
 ## 📡 API Endpoints
 
-| Method | Endpoint | Deskripsi |
-|--------|----------|-----------|
-| GET | `/api/frames` | Get all frames |
-| GET | `/api/frames/:type` | Get frames by type (1/3/4) |
-| POST | `/api/frames` | Add new frame (admin) |
-| POST | `/api/photos/process` | Process photo with frame |
-| POST | `/api/payment/create` | Create payment transaction |
-| GET | `/api/transactions` | Get all transactions (admin) |
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| `GET` | `/api/health` | Health check | ❌ |
+| `GET` | `/api/frames` | Get all frames | ❌ |
+| `GET` | `/api/frames/:type` | Get frames by strip type | ❌ |
+| `POST` | `/api/frames` | Create new frame | ✅ |
+| `PUT` | `/api/frames/:id` | Update frame | ✅ |
+| `DELETE` | `/api/frames/:id` | Delete frame | ✅ |
+| `POST` | `/api/photos/process` | Process photo with frame | ❌ |
+| `POST` | `/api/payment/create` | Create payment transaction | ❌ |
+| `POST` | `/api/payment/notification` | Midtrans payment notification | ❌ |
+| `GET` | `/api/transactions` | Get all transactions | ✅ |
+| `GET` | `/api/transactions/:id` | Get transaction detail | ✅ |
 
 ---
 
-## 🎨 Screenshots
+## 🗄️ Database Schema (Not All)
 
-| User Interface | Admin Panel |
-|----------------|-------------|
-| ![Home Page](https://via.placeholder.com/400x250/4F46E5/FFFFFF?text=Home+Page) | ![Admin Dashboard](https://via.placeholder.com/400x250/10B981/FFFFFF?text=Admin+Dashboard) |
-| ![Frame Selection](https://via.placeholder.com/400x250/8B5CF6/FFFFFF?text=Frame+Selection) | ![Frame Management](https://via.placeholder.com/400x250/F59E0B/FFFFFF?text=Frame+Management) |
+### Frame Types
+- **1-strip**: Frame untuk 1 foto
+- **3-strip**: Frame untuk 3 foto
+- **4-strip**: Frame untuk 4 foto
+
+### Frame Categories
+- **FREE**: Frame gratis untuk semua pengguna
+- **PREMIUM**: Frame berbayar dengan watermark
+
+---
+
+## 🔧 Development tanpa Docker
+
+### Backend Setup
+```bash
+cd backend
+npm install
+
+# Setup database
+npx sequelize-cli db:create
+npx sequelize-cli db:migrate
+npx sequelize-cli db:seed:all
+
+# Run development server
+npm run dev
+```
+
+### Frontend Setup
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+### Database Migrations
+```bash
+# Create new migration
+npx sequelize-cli migration:generate --name create-frames-table
+
+# Run migrations
+npx sequelize-cli db:migrate
+
+# Rollback migration
+npx sequelize-cli db:migrate:undo
+
+# Seed database
+npx sequelize-cli db:seed:all
+```
+
+---
+
+## 🧪 Testing
+
+### Unit Tests
+```bash
+# Backend tests
+cd backend
+npm test
+
+# Frontend tests
+cd frontend
+npm test
+```
+
+### API Testing dengan Postman
+```bash
+# Import Postman collection
+postman/snappie-api-collection.json
+```
 
 ---
 
 ## 🐛 Troubleshooting
 
+### Docker Issues
 | Issue | Solution |
 |-------|----------|
-| **Port already in use** | Change port in `.env` or kill process: `kill -9 $(lsof -t -i:5000)` |
-| **MySQL connection failed** | Verify credentials and ensure MySQL service is running |
-| **Multer upload fails** | Check folder permissions and file size limits |
-| **Canvas not working** | Ensure browser supports Canvas API and check CORS settings |
-| **Payment gateway error** | Verify Midtrans API keys and internet connection |
+| Port already in use | Change port in docker-compose.yml or stop conflicting service |
+| Docker build fails | Check Dockerfile syntax and network connection |
+| Database connection refused | Wait for PostgreSQL to initialize (30-60 seconds) |
+| Permission denied on volume | Run `sudo chown -R $USER:$USER ./uploads` |
+
+### Database Issues
+```bash
+# Access PostgreSQL container
+docker exec -it snappie_postgres psql -U snappie_user -d snappie_db
+
+# Reset database
+docker-compose down -v
+docker-compose up --build
+
+# View database logs
+docker logs snappie_postgres
+```
+
+### Application Issues
+```bash
+# View backend logs
+docker logs snappie_backend -f
+
+# Restart services
+docker-compose restart
+
+# Check service status
+docker-compose ps
+```
+
+---
+
+## 📦 Deployment
+
+### Production Deployment dengan Docker
+```bash
+# Build production images
+docker-compose -f docker-compose.prod.yml build
+
+# Deploy to production
+docker-compose -f docker-compose.prod.yml up -d
+```
+
+### Environment Production
+```env
+NODE_ENV=production
+DB_HOST=your_production_db_host
+MIDTRANS_IS_PRODUCTION=true
+```
+
+### Monitoring
+- **Logs**: `docker-compose logs -f`
+- **Metrics**: Prometheus + Grafana
+- **Health**: `/api/health` endpoint
 
 ---
 
 ## 🤝 Contributing
 
 1. Fork repository
-2. Buat feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push ke branch (`git push origin feature/AmazingFeature`)
-5. Buat Pull Request
+2. Create feature branch: `git checkout -b feature/amazing-feature`
+3. Commit changes: `git commit -m 'Add amazing feature'`
+4. Push to branch: `git push origin feature/amazing-feature`
+5. Open Pull Request
+
+### Development Guidelines
+- Follow existing code style
+- Write meaningful commit messages
+- Add tests for new features
+- Update documentation as needed
 
 ---
 
 ## 📄 License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License. See `LICENSE` file for details.
 
 ---
 
-## 👨‍💻 Author
+## 👥 Authors
 
-**Luminaria Dev**  
-💻 *Shining with Code ✨*
+**Luminaria Dev Team**  
+*Shining with Code ✨*
 
-- GitHub: [@luminariadev](https://github.com/luminariadev)
-- Email: rizkianuari83@gmail.com
+- **Lead Developer**: [@luminariadev](https://github.com/luminariadev)
+- **Frontend Specialist**: [@frontend-dev](https://github.com/)
+- **Backend Specialist**: [@backend-dev](https://github.com/)
+
+### 📞 Contact
+- GitHub Issues: [Report Bug / Request Feature](https://github.com/luminaria/snappie/issues)
+- Email: hello@luminariadev.xyz
 
 ---
 
-## ⭐ Support
+## 🙏 Acknowledgments
 
-Jika project ini membantu Anda, berikan ⭐ pada repository ini!
+- [Midtrans](https://midtrans.com) for payment gateway
+- [Tailwind CSS](https://tailwindcss.com) for styling framework
+- [Sequelize](https://sequelize.org) for ORM
+- [Vite](https://vitejs.dev) for build tool
+- [Docker](https://docker.com) for containerization
+
+---
+
+## ⭐ Support the Project
+
+Jika project ini bermanfaat untuk Anda, berikan ⭐ pada repository ini!
+
+---
+
+**Built with ❤️ using modern web technologies**  
+*Deploy anywhere with Docker • Scale effortlessly • Enterprise ready*
