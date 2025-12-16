@@ -494,7 +494,7 @@ Distributed under the MIT License. See `LICENSE` file for details.
 
 - **Lead Developer**: [@luminariadev](https://github.com/luminariadev)
 - **Frontend Specialist**: [@frontend-dev](https://github.com/)
-- **Backend Specialist**: [@backend-dev](https://github.com/)
+- **Backend Specialist**: [@backend-dev](https://github.com/SalmanMuhamadRidwan)
 
 ### 📞 Contact
 - GitHub Issues: [Report Bug / Request Feature](https://github.com/luminaria/snappie/issues)
