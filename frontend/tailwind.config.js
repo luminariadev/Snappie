@@ -6,6 +6,17 @@ export default {
   ],
   theme: {
     extend: {
+      // Mobile-first breakpoints
+      screens: {
+        'xs': '375px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+        'kiosk': '1920px',
+      },
+
       colors: {
         snappieYellow1: "#FAE446",
         snappieYellow2: "#FFE97F",
@@ -16,16 +27,18 @@ export default {
         snappieGreen: "#BBDA97",
         snappiePink: "#F9ADB0",
         snappieGray2: "#FBFDFC",
-        badgeGreen: "#D1F7C4", 
-        badgeGreenText: "#277A43", 
-        badgeRed: "#FAD4D4", 
-        badgeRedText: "#8C1C1C", 
+        badgeGreen: "#D1F7C4",
+        badgeGreenText: "#277A43",
+        badgeRed: "#FAD4D4",
+        badgeRedText: "#8C1C1C",
       },
+
       fontFamily: {
         pixel: ["'Press Start 2P'", "cursive"],
         press: ["'Press Start 2P'", "cursive"],
         roboto: ["Roboto", "sans-serif"],
       },
+
       boxShadow: {
         pixel: "0 4px 0 #000",
         deep: "0 10px 25px rgba(0,0,0,0.18)",
@@ -38,7 +51,7 @@ export default {
       },
       borderRadius: {
         xl2: "32px",
-      },  
+      },
     },
   },
   plugins: [],

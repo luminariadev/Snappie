@@ -1,0 +1,85 @@
+:root {
+  /* Design Tokens - Core Colors */
+  --color-primary: #FAE446;
+  --color-primary-foreground: #000000;
+  --color-secondary: #F9ADB0;
+  --color-secondary-foreground: #000000;
+  --color-accent: #BBDA97;
+  --color-accent-foreground: #000000;
+  --color-muted: #F4F4F5;
+  --color-muted-foreground: #71717A;
+  --color-destructive: #EF4444;
+  --color-destructive-foreground: #FFFFFF;
+  --color-border: #E4E4E7;
+  --color-input: #E4E4E7;
+  --color-ring: #FAE446;
+
+  /* Semantic Colors for Theming */
+  --background: #FFFFFF;
+  --foreground: #18181B;
+  --card: #FFFFFF;
+  --card-foreground: #18181B;
+  --popover: #FFFFFF;
+  --popover-foreground: #18181B;
+  --primary: #FAE446;
+  --primary-foreground: #000000;
+  --secondary: #F9ADB0;
+  --secondary-foreground: #000000;
+  --muted: #F4F4F5;
+  --muted-foreground: #71717A;
+  --accent: #BBDA97;
+  --accent-foreground: #000000;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: #E4E4E7;
+  --input: #E4E4E7;
+  --ring: #FAE446;
+
+  /* Typography Scale - Fluid with clamp() */
+  --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --font-size-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --font-size-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --font-size-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --font-size-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --font-size-2xl: clamp(1.5rem, 1.25rem + 1.25vw, 2rem);
+
+  /* Spacing Scale - Fluid */
+  --spacing-0: 0;
+  --spacing-1: clamp(0.25rem, 0.2rem + 0.25vw, 0.5rem);
+  --spacing-2: clamp(0.5rem, 0.4rem + 0.5vw, 0.75rem);
+  --spacing-3: clamp(0.75rem, 0.6rem + 0.75vw, 1rem);
+  --spacing-4: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+  --spacing-5: clamp(1.25rem, 1rem + 1.25vw, 2rem);
+  --spacing-6: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
+  --spacing-8: clamp(2rem, 1.5rem + 2.5vw, 3rem);
+  --spacing-10: clamp(2.5rem, 2rem + 2.5vw, 4rem);
+
+  /* Border Radius */
+  --radius-sm: 0.125rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Z-Index Scale */
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal-backdrop: 300;
+  --z-modal: 400;
+  --z-popover: 500;
+
+  /* Touch Targets */
+  --touch-size: 44px;
+  --touch-size-lg: 48px;
+}
