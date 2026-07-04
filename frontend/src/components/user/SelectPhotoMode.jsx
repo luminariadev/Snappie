@@ -8,7 +8,7 @@ export default function SelectPhotoMode({ onChange }) {
     const numericValue = Number(value);
     setMode(numericValue);
     setOpen(false);
-    onChange && onChange(numericValue); // kirim number ke parent
+    if (onChange) onChange(numericValue); // kirim number ke parent
   };
 
   const getModeLabel = (value) => `${value} Photo${value > 1 ? "s" : ""}`;

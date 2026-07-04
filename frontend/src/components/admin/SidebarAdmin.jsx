@@ -1,5 +1,5 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import { MdPhotoLibrary, MdPayment, MdColorLens } from "react-icons/md";
+import { MdPhotoLibrary, MdPayment } from "react-icons/md";
 
 export default function SidebarAdmin() {
   const navigate = useNavigate();

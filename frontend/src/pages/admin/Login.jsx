@@ -175,7 +175,7 @@ export default function Login() {
       // ARAHKAN KE DASHBOARD
       navigate("/admin/frame");
 
-    } catch (err) {
+    } catch {
       setErrorMsg("Terjadi kesalahan server");
     }
   };

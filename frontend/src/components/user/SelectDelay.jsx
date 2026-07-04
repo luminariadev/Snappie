@@ -7,7 +7,7 @@ export default function SelectDelay({ onChange }) {
   const handleSelect = (value) => {
     setDelay(value);
     setOpen(false);
-    onChange && onChange(value);
+    if (onChange) onChange(value);
   };
 
   // Definisikan opsi delay

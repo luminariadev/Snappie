@@ -12,7 +12,6 @@ export default function TakeCamera() {
   const delay = Number(location.state?.delay) || 3;
   const photosCount = Number(location.state?.photoMode) || 3;
 
-  const [isStarted, setIsStarted] = useState(false);
   const [countdown, setCountdown] = useState(0);
   const [capturedImages, setCapturedImages] = useState([]);
   const [isCounting, setIsCounting] = useState(false);
@@ -90,9 +89,9 @@ export default function TakeCamera() {
           {/* TOP BAR */}
           <div className="bg-[#F4A9B8] w-full px-6 py-3 border-b-2 border-black relative flex items-center justify-center">
             <div className="absolute left-6 flex gap-3">
-              <div className="w-4 h-4 rounded-full bg-[#E30C10] shadow-lg shadow-black/40"></div>
-              <div className="w-4 h-4 rounded-full bg-[#3298E0] shadow-lg shadow-black/40"></div>
-              <div className="w-4 h-4 rounded-full bg-[#28BB45] shadow-lg shadow-black/40"></div>
+              <div className="w-4 h-4 rounded-full bg-[#E30C10] shadow-lg shadow-black/40" />
+              <div className="w-4 h-4 rounded-full bg-[#3298E0] shadow-lg shadow-black/40" />
+              <div className="w-4 h-4 rounded-full bg-[#28BB45] shadow-lg shadow-black/40" />
             </div>
 
             <h3
@@ -211,7 +210,7 @@ export default function TakeCamera() {
       </div>
 
       {/* HIDDEN CANVAS FOR FILTERED CAPTURE */}
-      <canvas ref={canvasRef} className="hidden"></canvas>
+      <canvas ref={canvasRef} className="hidden" />
     </div>
   );
 }

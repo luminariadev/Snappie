@@ -173,7 +173,7 @@ export default function EditFrame() {
   const [frames, setFrames] = useState([]);
   const [selectedFrame, setSelectedFrame] = useState(null);
   const [isProcessing, setIsProcessing] = useState(false);
-  const [fotoId, setFotoId] = useState(null);
+  
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [pollingId, setPollingId] = useState(null);
 
@@ -304,7 +304,6 @@ export default function EditFrame() {
     setIsProcessing(true);
     try {
       const id = await createFoto();
-      setFotoId(id);
 
       if (selectedFrame.isPremium) {
         const res = await fetch(`${BASE_URL}/api/payment/create`, {
