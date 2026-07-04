@@ -1,0 +1,16 @@
+dist
+node_modules
+*.config.js
+*.config.ts
+*.md
+*.html
+*.svg
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.ico
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
