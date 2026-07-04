@@ -14,6 +14,17 @@
   --color-input: #E4E4E7;
   --color-ring: #FAE446;
 
+  /* Snappie Brand Colors */
+  --snappie-yellow-1: #FAE446;
+  --snappie-yellow-2: #FFE97F;
+  --snappie-black: #000000;
+  --snappie-white: #FFFFFF;
+  --snappie-gray: #1E1E1E;
+  --snappie-blue: #3298E0;
+  --snappie-green: #BBDA97;
+  --snappie-pink: #F9ADB0;
+  --snappie-gray2: #FBFDFC;
+
   /* Semantic Colors for Theming */
   --background: #FFFFFF;
   --foreground: #18181B;
@@ -36,12 +47,14 @@
   --ring: #FAE446;
 
   /* Typography Scale - Fluid with clamp() */
-  --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-  --font-size-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
-  --font-size-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
-  --font-size-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
-  --font-size-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
-  --font-size-2xl: clamp(1.5rem, 1.25rem + 1.25vw, 2rem);
+  --font-size-xs: clamp(0.625rem, 0.6rem + 0.125vw, 0.75rem);
+  --font-size-sm: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --font-size-base: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --font-size-lg: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --font-size-xl: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --font-size-2xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --font-size-3xl: clamp(1.5rem, 1.25rem + 1.25vw, 2rem);
+  --font-size-4xl: clamp(2rem, 1.5rem + 2.5vw, 2.5rem);
 
   /* Spacing Scale - Fluid */
   --spacing-0: 0;
@@ -53,6 +66,8 @@
   --spacing-6: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
   --spacing-8: clamp(2rem, 1.5rem + 2.5vw, 3rem);
   --spacing-10: clamp(2.5rem, 2rem + 2.5vw, 4rem);
+  --spacing-12: clamp(3rem, 2.5rem + 2.5vw, 5rem);
+  --spacing-16: clamp(4rem, 3rem + 5vw, 8rem);
 
   /* Border Radius */
   --radius-sm: 0.125rem;
@@ -60,17 +75,22 @@
   --radius-lg: 0.5rem;
   --radius-xl: 0.75rem;
   --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-full: 9999px;
 
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-pixel: 0 4px 0 #000;
+  --shadow-deep: 0 10px 25px rgba(0, 0, 0, 0.18);
 
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 200ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
   /* Z-Index Scale */
   --z-dropdown: 100;
@@ -78,8 +98,33 @@
   --z-modal-backdrop: 300;
   --z-modal: 400;
   --z-popover: 500;
+  --z-toast: 600;
 
-  /* Touch Targets */
+  /* Touch Targets - Mobile First */
   --touch-size: 44px;
   --touch-size-lg: 48px;
+  --touch-size-xl: 56px;
+
+  /* Layout */
+  --sidebar-width: 280px;
+  --sidebar-collapsed-width: 64px;
+  --topbar-height: 64px;
+  --max-content-width: 1200px;
+  --kiosk-max-width: 1920px;
+}
+
+/* Dark Mode Overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #fafafa;
+    --card: #18181b;
+    --card-foreground: #fafafa;
+    --popover: #18181b;
+    --popover-foreground: #fafafa;
+    --muted: #27272a;
+    --muted-foreground: #a1a1aa;
+    --border: #27272a;
+    --input: #27272a;
+  }
 }
