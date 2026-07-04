@@ -42,7 +42,7 @@ export default function ColourList({ colours }) {
               border-[2px] border-black
             "
             style={{ backgroundColor: c.hex }}
-          ></div>
+           />
 
           <span>{c.name}</span>
           <span>{c.hex}</span>
