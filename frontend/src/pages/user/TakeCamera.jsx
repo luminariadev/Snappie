@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useMemo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Webcam from "react-webcam";
 import UploadPhotoPopup from "../../components/user/UploadPhotoPopup.jsx";
@@ -25,14 +25,14 @@ export default function TakeCamera() {
     setIsCounting(true);
   };
 
-  const filterStyles = {
+  const filterStyles = useMemo(() => ({
     normal: "none",
     mono: "grayscale(100%) contrast(1)",
     sepia: "sepia(70%) contrast(1) brightness(1.1)",
     soft: "brightness(1.1) blur(1px) contrast(0.9) saturate(1.4)",
     pop: "saturate(2) contrast(1) brightness(1.1)",
     retro: "contrast(1.1) sepia(0.7) saturate(0.8) hue-rotate(-10deg)",
-  };
+  }), []);
 
   useEffect(() => {
     if (!isCounting) return;
@@ -55,7 +55,7 @@ export default function TakeCamera() {
     }
     const timer = setTimeout(() => setCountdown((prev) => prev - 1), 1000);
     return () => clearTimeout(timer);
-  }, [countdown, isCounting, photosCount, selectedFilter]);
+  }, [countdown, isCounting, photosCount, selectedFilter, filterStyles]);
 
   const btnBase =
     "font-press text-xs px-6 sm:px-8 py-3 sm:py-4 rounded-full text-black font-bold border-[2.5px] border-black shadow-lg hover:scale-105 active:scale-95 transition-all";
